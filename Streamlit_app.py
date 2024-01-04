@@ -23,12 +23,7 @@ my_fruit_list=my_fruit_list.loc[filter]
 streamlit.dataframe(my_fruit_list)
 
 
-st.text('Fixed width text')
-st.markdown('_Markdown_') # see *
-st.latex(r''' e^{i\pi} + 1 = 0 ''')
-st.write('Most objects') # df, err, func, keras!
-st.write(['st', 'is <', 3]) # see *
-st.title('My title')
-st.header('My header')
-st.subheader('My sub')
-st.code('for i in range(8): foo()')
+st.dataframe(my_fruit_list)
+st.table(my_fruit_list.iloc[0:10])
+st.json({'foo':'bar','fu':'ba'})
+st.metric('My metric', 42, 2)
