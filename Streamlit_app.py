@@ -15,8 +15,19 @@ my_fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/da
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
 # Let's put a pick list here so they can pick the fruit they want to include 
-filter = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries'])
+filter = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
 my_fruit_list=my_fruit_list.loc[filter]
 
 # pandas show table streamlit.dataframe
 streamlit.dataframe(my_fruit_list)
+
+
+st.text('Fixed width text')
+st.markdown('_Markdown_') # see *
+st.latex(r''' e^{i\pi} + 1 = 0 ''')
+st.write('Most objects') # df, err, func, keras!
+st.write(['st', 'is <', 3]) # see *
+st.title('My title')
+st.header('My header')
+st.subheader('My sub')
+st.code('for i in range(8): foo()')
