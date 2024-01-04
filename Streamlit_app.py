@@ -1,4 +1,5 @@
 import streamlit
+import streamlit as st
 
 # This is to show different type of headings
 streamlit.header('Breakfast Menu')
