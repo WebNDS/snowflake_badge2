@@ -18,13 +18,16 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 # Let's put a pick list here so they can pick the fruit they want to include 
 filter = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
 
+fruit_to_show=my_fruit_list.loc[filter]
+print(fruit_to_show)
 
 # pandas show table streamlit.dataframe
-streamlit.dataframe(my_fruit_list)
+streamlit.dataframe(fruit_to_show)
+
+
 
 st.dataframe(my_fruit_list)
 st.table(my_fruit_list.iloc[0:10])
 st.json({'foo':'bar','fu':'ba'})
 st.metric('My metric', 42, 2)
 
-my_fruit_list=my_fruit_list.loc[filter]
