@@ -25,9 +25,6 @@ print(fruit_to_show)
 streamlit.dataframe(fruit_to_show)
 
 
-
-st.dataframe(my_fruit_list)
-st.table(my_fruit_list.iloc[0:10])
-st.json({'foo':'bar','fu':'ba'})
-st.metric('My metric', 42, 2)
-
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+streamlit.text(fruityvice_response)
